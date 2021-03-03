@@ -80,20 +80,28 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                @foreach($apps as $app)
+                    <?php $sum = 0?>
+                    <p>Nombre:{{ $app->name }}</p>
+                    <p>Categoria:{{ $app->category->name }}</p>
+                    <p>Descripcion:{{ $app->description }}</p>
+                    @foreach ($app->prices as $price)
+                        @if($price->application_id == $app->id)
+                            <p>Precio:${{ $price->price }}</p>
+                            @continue;
+                        @endif
+                    @endforeach
+
+                    @foreach ($app->califications as $calification)
+                        @if($calification->application_id == $app->id)
+                            <?php $sum += $calification->calification; ?>
+                        @endif
+                    @endforeach
+                    <?php $prom = $sum / count($app->califications); ?>
+
+                    <p>Calificacion:{{ $prom }}</p><hr>
+                @endforeach
             </div>
         </div>
     </body>

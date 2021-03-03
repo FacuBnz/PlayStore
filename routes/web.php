@@ -1,5 +1,7 @@
 <?php
 
+use App\Application;
+use App\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $applications = Application::all();
+    
+
+    return view('welcome', [
+        'apps' => $applications,
+    ]);
 });
