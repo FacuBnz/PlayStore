@@ -16,7 +16,7 @@ class CreateCalificationsTable extends Migration
         Schema::create('califications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('application_id')->constrained('applications')->onDelete('cascade');
-            $table->integer('price');
+            $table->integer('calification');
             $table->timestamps();
         });
     }
