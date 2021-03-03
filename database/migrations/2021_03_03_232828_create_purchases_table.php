@@ -15,8 +15,7 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('application_id')->constrained('applications')->onDelete('cascade');
+            $table->foreignId('wish_id')->constrained('wish_list')->onDelete('cascade');
             $table->timestamps();
         });
     }
