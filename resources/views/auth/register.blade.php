@@ -79,7 +79,7 @@
                             <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
                             <div class="col-md-6">
-                                <select class="custom-select">
+                                <select class="custom-select" name="role" id="role">
                                     <option selected>Select one role...</option>
                                     <option value="USER">User</option>
                                     <option value="ADMIN">Administrator</option>
