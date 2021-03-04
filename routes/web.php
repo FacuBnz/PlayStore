@@ -31,6 +31,8 @@ use Illuminate\Support\Facades\Route;
 //     ]);
 // });
 
+Route::redirect('/', 'http://localhost/PlayStore/public/apps');
+
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/apps', 'HomeController@index')->name('home');
