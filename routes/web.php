@@ -16,14 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
 
-    $applications = Application::all();
-    $users = User::all();
+//     $applications = Application::all();
+//     $users = User::all();
+//     $categories = Category::all();
 
 
-    return view('welcome', [
-        'apps' => $applications,
-        'users'=> $users,
-    ]);
-});
+//     return view('welcome', [
+//         'apps' => $applications,
+//         'users'=> $users,
+//         'categories' =>$categories,
+
+//     ]);
+// });

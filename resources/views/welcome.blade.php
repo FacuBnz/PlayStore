@@ -81,7 +81,7 @@
 
             <div class="content">
 
-                @foreach($apps as $app)
+                {{-- @foreach($apps as $app)
                     <?php $sum = 0?>
                     <p>Nombre:{{ $app->name }}</p>
                     <p>Categoria:{{ $app->category->name }}</p>
@@ -109,7 +109,14 @@
                         <p>{{ $wish->application->name }}</p>
                     @endforeach
                 @endforeach
+
                 <hr>
+                <h2>categorias</h2>
+                @foreach($categories as $category)
+                    <p>{{ $category->name }}</p>
+                @endforeach
+                <hr> --}}
+
             </div>
         </div>
     </body>
