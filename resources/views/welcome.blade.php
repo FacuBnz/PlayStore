@@ -102,6 +102,14 @@
 
                     <p>Calificacion:{{ $prom }}</p><hr>
                 @endforeach
+
+                @foreach($users as $user)
+                        <p>{{ $user->name }}</p>
+                    @foreach($user->wishes as $wish)
+                        <p>{{ $wish->application->name }}</p>
+                    @endforeach
+                @endforeach
+                <hr>
             </div>
         </div>
     </body>

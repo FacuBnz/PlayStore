@@ -2,6 +2,7 @@
 
 use App\Application;
 use App\Category;
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
     $applications = Application::all();
-    
+    $users = User::all();
+
 
     return view('welcome', [
         'apps' => $applications,
+        'users'=> $users,
     ]);
 });
