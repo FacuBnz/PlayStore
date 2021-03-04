@@ -36,3 +36,4 @@ Route::redirect('/', 'http://localhost/PlayStore/public/apps');
 Auth::routes();
 
 Route::get('/apps', 'HomeController@index')->name('home');
+Route::get('/newApp', 'ApplicationController@newApp')->name('newApp');
