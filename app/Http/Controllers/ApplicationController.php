@@ -19,7 +19,7 @@ class ApplicationController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('getImage');
     }
 
     public function newContent( $id ){

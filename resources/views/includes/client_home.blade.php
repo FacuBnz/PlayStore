@@ -29,6 +29,8 @@
                 <?php $prom = ($sum/$cant) ; ?>
 
                 <p class="card-text text-muted">Calification:{{ $prom }}</p><hr>
+
+                <a href="#" class="btn btn-success">Comprar</a>
             </div>
         </div>
     @endforeach
