@@ -31,7 +31,7 @@ class CalificationController extends Controller
                 $calification->save();
             }
 
-            return redirect()->route('home');
+            return redirect()->route('newApp.price', ['id' => $id]);
 
         }else{
             return redirect()->route('home');

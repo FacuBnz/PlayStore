@@ -46,7 +46,8 @@ Route::post('/newApp/content/save', 'ApplicationController@save')->name('newApp.
 
 Route::get('/newApp/calification/{id}', 'CalificationController@index')->name('newApp.calification');
 
-
+Route::get('/newApp/price/{id}', 'PriceController@index')->name('newApp.price');
+Route::post('/newApp/price/save', 'PriceController@save')->name('newApp.price.save');
 
 
 
