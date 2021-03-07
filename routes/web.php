@@ -36,4 +36,17 @@ Route::redirect('/', 'http://localhost/PlayStore/public/apps');
 Auth::routes();
 
 Route::get('/apps', 'HomeController@index')->name('home');
-Route::get('/newApp', 'ApplicationController@newApp')->name('newApp');
+Route::get('/apps/image/{filename}', 'ApplicationController@getImage')->name('app.image');
+
+Route::get('/newApp/category', 'CategoryController@newCategory')->name('newApp.category');
+Route::post('/newApp/category/save', 'CategoryController@save')->name('newApp.category.save');
+
+Route::get('/newApp/content/{id}', 'ApplicationController@newContent')->name('newApp.content');
+Route::post('/newApp/content/save', 'ApplicationController@save')->name('newApp.content.save');
+
+Route::get('/newApp/calification/{id}', 'CalificationController@index')->name('newApp.calification');
+
+
+
+
+

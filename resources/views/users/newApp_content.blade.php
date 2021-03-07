@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('New App') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="#">
+                        <form method="POST" action="{{ route('newApp.content.save') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -26,26 +26,12 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="Category" class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
+                                <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="Category" type="text" class="form-control @error('Category') is-invalid @enderror" name="Category" value="{{ old('Category') }}" required autocomplete="Category" >
+                                    <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description"></textarea>
 
-                                    @error('Category')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="price" type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price">
-
-                                    @error('price')
+                                    @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -57,8 +43,7 @@
                                 <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
                                 <div class="col-md-6">
-
-                                    <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image">
+                                    <input id="image" type="file" class="form-control border-0 @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image">
 
                                     @error('image')
                                         <span class="invalid-feedback" role="alert">
@@ -71,10 +56,12 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('Following') }}
                                     </button>
                                 </div>
                             </div>
+
+                            <input type="hidden" name="id" value="{{ $id }}">
                         </form>
                     </div>
                 </div>
