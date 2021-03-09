@@ -37,10 +37,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //relacion uno a muchos
     public function purchases(){
         return $this->hasMany('App\Purchase');
     }
+    //relacion uno a muchos
     public function wishes(){
         return $this->hasMany('App\Wish');
+    }
+    //relacion uno a muchos
+    public function applications(){
+        return $this->hasMany('App\Application');
     }
 }

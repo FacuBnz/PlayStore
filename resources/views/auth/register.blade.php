@@ -80,8 +80,7 @@
 
                             <div class="col-md-6">
                                 <select class="custom-select" name="role" id="role">
-                                    <option selected>Select one role...</option>
-                                    <option value="USER">User</option>
+                                    <option value="USER" selected>User</option>
                                     <option value="ADMIN">Administrator</option>
                                 </select>
                             </div>

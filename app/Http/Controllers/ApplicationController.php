@@ -38,6 +38,7 @@ class ApplicationController extends Controller
         //verificar si es administrador
         if(Auth::user()->role == 'ADMIN'){
 
+            $user_id = Auth::user()->id;
             //crear nueva app
             $app = new Application();
             //validar datos del formulario
@@ -52,6 +53,7 @@ class ApplicationController extends Controller
             $id_category = $request->input('id');
 
             //asignar nueva data
+            $app->user_id = $user_id;
             $app->category_id = $id_category;
             $app->name = $name;
             $app->description = $description;

@@ -2,7 +2,7 @@
     @foreach($apps as $app)
         <?php $sum = 0 ?>
 
-        <div class="card text-center shadow-sm flex-nowrap" style="width: 18rem;">
+        <div class="card text-center shadow-sm" style="width: 18rem;">
             @if($app->image != null)
                 <img src="{{ route('app.image',['filename' => $app->image]) }}" style="max-width: 300px;" alt="image of {{ $app->name }}" class="card-img-top">
             @endif
